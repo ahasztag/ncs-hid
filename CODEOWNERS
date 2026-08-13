@@ -1,1 +1,10 @@
-* @gmarull @carlescufi
+# CODEOWNERS for autoreview assigning in github
+
+# https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+# Order is important; the last matching pattern takes the most precedence.
+
+* @nrfconnect/ncs-si-xcake
+
+# Documentation changes require review from the tech writer team.
+doc/**/*      @nrfconnect/ncs-si-xcake-doc
+**/*.rst      @nrfconnect/ncs-si-xcake-doc

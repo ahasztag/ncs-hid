@@ -1,16 +1,76 @@
-# editors
-.vscode
+*.o
+*.d
+*.cmd
+*.log
+*.pyc
 *.swp
+*.swo
 *~
-
-# python
+build
+build-*
+build_*
+cscope.*
+.dir
+venv
 .venv
+.idea
 
-# build
-/build*
-/twister-out*
+/*.patch
 
-__pycache__/
+tags
+.project
+.cproject
+.xxproject
+.envrc
+.vscode
 
-# docs
-/doc/_build*
+# AI assistant / IDE tool directories
+.cursor
+.claude
+.nordic-skills-library
+.aider*
+.continue
+.windsurf
+.codex
+.cline
+.roo
+
+sanity-out*
+twister-out*
+
+doc/_build
+doc/nrf/_doxygen/
+doc/nrf/_samples/
+doc/*_warnings.txt
+doc/*_doc.log
+
+# CI output
+compliance.xml
+
+# from check_compliance.py
+BinaryFiles.txt
+BoardYml.txt
+Checkpatch.txt
+ClangFormat.txt
+DevicetreeBindings.txt
+GitDiffCheck.txt
+Gitlint.txt
+Identity.txt
+ImageSize.txt
+Kconfig.txt
+KconfigBasic.txt
+KconfigBasicNoModules.txt
+KconfigHWMv2.txt
+KeepSorted.txt
+MaintainersFormat.txt
+ModulesMaintainers.txt
+Nits.txt
+Pylint.txt
+Ruff.txt
+SphinxLint.txt
+SysbuildKconfig.txt
+SysbuildKconfigBasic.txt
+SysbuildKconfigBasicNoModules.txt
+TextEncoding.txt
+YAMLLint.txt
+**/.DS_Store
