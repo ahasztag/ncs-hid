@@ -8,3 +8,4 @@
 # Documentation changes require review from the tech writer team.
 doc/**/*      @nrfconnect/ncs-si-xcake-doc
 **/*.rst      @nrfconnect/ncs-si-xcake-doc
+**/*.md       @nrfconnect/ncs-si-xcake-doc
