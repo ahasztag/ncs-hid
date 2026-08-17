@@ -6,9 +6,11 @@
 *.swp
 *.swo
 *~
-build
-build-*
-build_*
+build/
+_build/
+build-*/
+build_*/
+_build_*/
 cscope.*
 .dir
 venv
@@ -38,7 +40,6 @@ tags
 sanity-out*
 twister-out*
 
-doc/_build
 doc/nrf/_doxygen/
 doc/nrf/_samples/
 doc/*_warnings.txt
