@@ -37,7 +37,7 @@ To select the USB stack, enable one of the following Kconfig choice options:
   The USB legacy stack is used by default.
 * :option:`CONFIG_DESKTOP_USB_STACK_NEXT`
   The option enables USB next stack (:kconfig:option:`CONFIG_USB_DEVICE_STACK_NEXT`).
-  This is the only USB stack that supports SoCs with USB High-Speed (such as the nRF54H20 SoC).
+  This is the only USB stack that supports SoCs with USB High-Speed.
 
 .. note::
    The USB next stack integration is :ref:`experimental <software_maturity>`.
@@ -85,7 +85,7 @@ The module informs that the HID report was sent using :c:struct:`hid_report_sent
   In the case of :ref:`nrf_desktop_hid_mouse_report_handling`, enabling the USB SOF synchronization also synchronizes motion sensor sampling with the USB SOF instead of USB polls (motion sensor sampling is synchronized to :c:struct:`hid_report_sent_event`).
   This synchronization ensures that the sensor is sampled more evenly.
 
-The :option:`CONFIG_DESKTOP_USB_HID_REPORT_SENT_ON_SOF` Kconfig option is enabled by default on devices (such as the nRF54H20 SoC) that use a UDC driver with High-Speed support (:kconfig:option:`CONFIG_UDC_DRIVER_HAS_HIGH_SPEED_SUPPORT`) to mitigate a negative impact of jitter related to USB polls.
+The :option:`CONFIG_DESKTOP_USB_HID_REPORT_SENT_ON_SOF` Kconfig option is enabled by default on devices that use a UDC driver with High-Speed support (:kconfig:option:`CONFIG_UDC_DRIVER_HAS_HIGH_SPEED_SUPPORT`) to mitigate a negative impact of jitter related to USB polls.
 The negative impact of the jitter is more visible for USB High-Speed.
 
 .. _nrf_desktop_usb_state_hid_class_instance:
@@ -241,7 +241,7 @@ DWC2 USB device controller support
 
 Due to the characteristics of the DWC2 USB Device Controller (UDC), the USB state module disables the USB stack when the USB cable is disconnected and enables the stack when the cable is connected.
 These actions are necessary to ensure proper USB stack operation.
-This change is applicable to the devices that use the DWC2 USB driver (such as the nRF54H20 SoC).
+This change is applicable to the devices that use the DWC2 USB driver.
 
 The :kconfig:option:`CONFIG_UDC_DWC2_USBHS_VBUS_READY_TIMEOUT` Kconfig option is set to a non-zero value to prevent the :c:func:`usbd_enable` function from blocking the application forever when the USB cable is not connected.
 Instead, the function returns an error on timeout.

@@ -270,7 +270,7 @@ You can enhance security further by enabling the :kconfig:option:`SB_CONFIG_BOOT
 This option enables using a pure signature of the image, verifying the signature directly on the image, rather than on its hash.
 However, you cannot use this option if the secondary image slot uses external memory.
 
-Bootloader features that are specific to the nRF54L and the nRF54H series are listed in their respective subsections below.
+Bootloader features that are specific to the nRF54L series are listed in the following subsection.
 
 MCUboot bootloader features specific to nRF54L series
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -284,36 +284,6 @@ See the :ref:`ug_kmu_provisioning_overview` documentation for details.
     To use automatic provisioning, enable the :kconfig:option:`SB_CONFIG_MCUBOOT_GENERATE_DEFAULT_KEY_FILE` sysbuild Kconfig option.
     This option enables generating a default :file:`keyfile.json` file during the build process based on the input file provided by the :kconfig:option:`SB_CONFIG_BOOT_SIGNATURE_KEY_FILE` sysbuild Kconfig option.
     The automatic provisioning is only performed if the west flash command is executed with the ``--erase`` or ``--recover`` flag.
-
-.. _nrf_desktop_mcuboot_bootloader_features_nrf54h:
-
-MCUboot bootloader features specific to nRF54H series
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-The nRF54H Series devices support the use of the Internal Trusted Storage (ITS) to store keys for signature verification instead of compiling key data into the MCUboot bootloader image.
-To use ITS in the MCUboot bootloader, enable the :kconfig:option:`SB_CONFIG_MCUBOOT_SIGNATURE_USING_ITS` sysbuild Kconfig option.
-For more details about secure storage on the nRF54H20, see :ref:`ug_nrf54h20_ironside_secure_storage`.
-You must also make sure to provision the public key to your target device before running the firmware.
-See the :ref:`ug_nrf54h20_keys` documentation for details.
-
-.. note::
-   To use automatic provisioning, enable the :kconfig:option:`SB_CONFIG_MCUBOOT_GENERATE_DEFAULT_KEY_FILE` sysbuild Kconfig option.
-   This option enables generating a default :file:`keyfile.json` file during the build process based on the input file provided by the :kconfig:option:`SB_CONFIG_BOOT_SIGNATURE_KEY_FILE` sysbuild Kconfig option.
-   The automatic provisioning is only performed if the west flash command is executed with the ``--erase`` or ``--recover`` flag.
-
-On the nRF54H devices, the MCUboot direct-xip mode uses by default a merged image slot that combines both application and radio core images.
-The merged binary size is the sum of the application image, the radio core image, and the padding between them.
-The merged image slot configuration is indicated by the :kconfig:option:`SB_CONFIG_MCUBOOT_SIGN_MERGED_BINARY` sysbuild Kconfig option.
-
-.. note::
-   Because padding is added between the application and radio core images, the merged binary ends up including the unused NVM from the application image partition.
-   To limit the impact of this unused NVM on the merged binary size, you can tailor the partition size of the application image to the image size.
-   If more space is needed for the application image in the future, you can increase the partition size of the application image using DFU.
-
-The MCUboot bootloader on the nRF54H devices requires additional configuration to properly support Suspend to RAM (S2RAM) feature.
-For further details, see the :ref:`ug_nrf54h20_pm_optimizations_bootloader` documentation.
-
-For more general information regarding the MCUboot bootloader on the nRF54H devices, see the :ref:`ug_nrf54h20_mcuboot_dfu` documentation.
 
 .. _nrf_desktop_bootloader_background_dfu:
 

@@ -203,25 +203,3 @@ Sample mouse or keyboard (``nrf54ls05dk/nrf54ls05b/cpuapp``)
         In the ``debug`` configurations, logs are provided through the UART.
       * The ``release`` configurations use the MCUboot bootloader built in the direct-xip mode (``MCUBOOT+XIP``) and support firmware updates using the :ref:`nrf_desktop_dfu`.
         The application image is verified using a pure ED25519 signature with software cryptography.
-
-Sample mouse or dongle (``nrf54h20dk/nrf54h20/cpuapp``)
-      * The configuration uses the nRF54H20 DK.
-      * The build types allow to build the application as a mouse or dongle.
-      * Inputs are simulated based on the hardware button presses.
-      * Bluetooth LE and USB High-Speed transports are enabled.
-        Bluetooth LE is configured to use Nordic Semiconductor's SoftDevice Link Layer and Low Latency Packet Mode (LLPM).
-        USB High-Speed is configured to use the USB next stack (:kconfig:option:`CONFIG_USB_DEVICE_STACK_NEXT`).
-        The :option:`CONFIG_DESKTOP_BLE_ADV_CTRL_ENABLE` and :option:`CONFIG_DESKTOP_BLE_ADV_CTRL_SUSPEND_ON_USB` Kconfig options are enabled in mouse configurations to improve the HID report rate over USB.
-      * In ``debug`` configurations, logs are provided through the UART.
-        For detailed information on working with the nRF54H20 DK, see the :ref:`ug_nrf54h20_gs` documentation.
-      * The configurations use the MCUboot bootloader built in the direct-xip mode (``MCUBOOT+XIP``) and support firmware updates using the :ref:`nrf_desktop_dfu`.
-        Configurations acting as HID peripherals also support firmware updates using the :ref:`nrf_desktop_dfu_mcumgr`.
-        For more details on MCUboot, see :ref:`nrf_desktop_bootloader`.
-
-        All configurations enable hardware cryptography for the MCUboot bootloader.
-        The MCUboot bootloader uses the :ref:`ug_crypto_architecture_implementation_standards_ironside` for hardware cryptography.
-        The application image is verified using a pure ED25519 signature.
-        The public key that MCUboot uses for validating the application image is securely stored in the Internal Trusted Storage (ITS).
-        For more details about secure storage on the nRF54H20, see :ref:`ug_nrf54h20_ironside_secure_storage`.
-        In all configurations, the MCUboot bootloader uses a merged image slot that combines both application and radio core images.
-        For more details on nRF54H Series DFU, see :ref:`ug_nrf54h20_mcuboot_dfu`.

@@ -81,5 +81,3 @@ target_sources_ifdef(CONFIG_DESKTOP_FAILSAFE_ENABLE app PRIVATE failsafe.c)
 target_sources_ifdef(CONFIG_DESKTOP_CPU_MEAS_ENABLE app PRIVATE cpu_meas.c)
 
 target_sources_ifdef(CONFIG_DESKTOP_NRF_PROFILER_SYNC_GPIO_ENABLE app PRIVATE nrf_profiler_sync.c)
-
-target_sources_ifdef(CONFIG_DESKTOP_DVFS app PRIVATE dvfs.c)

@@ -368,7 +368,7 @@ Depending on the development kit you use, you need to select the respective conf
 
       .. table-from-rows:: /includes/sample_board_rows.txt
          :header: heading
-         :rows: nrf52840dk_nrf52840, nrf52833dk_nrf52833, nrf52833dk_nrf52820, nrf5340dk_nrf5340_cpuapp, nrf54l15dk_nrf54l15_cpuapp, nrf54l15dk_nrf54l10_cpuapp, nrf54l15dk_nrf54l05_cpuapp, nrf54lm20dk_nrf54lm20a_cpuapp, nrf54lm20dk_nrf54lm20b_cpuapp, nrf54ls05dk_nrf54ls05b_cpuapp, nrf54h20dk_nrf54h20_cpuapp
+         :rows: nrf52840dk_nrf52840, nrf52833dk_nrf52833, nrf52833dk_nrf52820, nrf5340dk_nrf5340_cpuapp, nrf54l15dk_nrf54l15_cpuapp, nrf54l15dk_nrf54l10_cpuapp, nrf54l15dk_nrf54l05_cpuapp, nrf54lm20dk_nrf54lm20a_cpuapp, nrf54lm20dk_nrf54lm20b_cpuapp, nrf54ls05dk_nrf54ls05b_cpuapp
 
       Depending on the configuration, a DK may act either as a mouse, keyboard, or dongle.
       For information about supported configurations for each board, see the :ref:`nrf_desktop_board_configuration_files` section.
@@ -1199,14 +1199,14 @@ See the following list of possible scenarios and best practices:
 USB High-Speed
 ~~~~~~~~~~~~~~
 
-You can use the nRF54H20 DK to evaluate USBHS.
+You can use the nRF54LM20 DK to evaluate USBHS.
 Use the ``release`` configuration and slightly modify the simulated motion module's configuration to ensure that non-zero motion values are reported in every HID report.
 See an example of the build command:
 
    .. parsed-literal::
       :class: highlight
 
-      west build -p -b nrf54h20dk/nrf54h20/cpuapp -- \
+      west build -p -b nrf54lm20dk/nrf54lm20a/cpuapp -- \
       -DFILE_SUFFIX=release \
       -DCONFIG_DESKTOP_MOTION_SIMULATED_ENABLE=y \
       -DCONFIG_DESKTOP_MOTION_SIMULATED_EDGE_TIME=8192 \

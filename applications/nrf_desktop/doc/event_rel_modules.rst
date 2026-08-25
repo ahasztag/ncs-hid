@@ -33,7 +33,6 @@ Sink modules for ble_peer_event
 * :ref:`nrf_desktop_ble_scan`
 * :ref:`nrf_desktop_ble_state_pm`
 * :ref:`nrf_desktop_dfu`
-* :ref:`nrf_desktop_dvfs`
 * :ref:`nrf_desktop_hid_forward`
 * :ref:`nrf_desktop_led_state`
 * :ref:`nrf_desktop_ble_state`
@@ -89,7 +88,6 @@ Sink modules for config_event
 * :ref:`nrf_desktop_ble_latency`
 * :ref:`nrf_desktop_ble_qos`
 * :ref:`nrf_desktop_dfu`
-* :ref:`nrf_desktop_dvfs`
 * :ref:`nrf_desktop_factory_reset`
 * :ref:`nrf_desktop_hid_forward`
 * :ref:`nrf_desktop_info`
@@ -150,7 +148,6 @@ Source modules for module_state_event
 * :ref:`nrf_desktop_click_detector`
 * :ref:`nrf_desktop_cpu_meas`
 * :ref:`nrf_desktop_dfu`
-* :ref:`nrf_desktop_dvfs`
 * :ref:`nrf_desktop_failsafe`
 * :ref:`nrf_desktop_fast_pair_app`
 * :ref:`nrf_desktop_fn_keys`
@@ -200,7 +197,6 @@ Sink modules for module_state_event
 * :ref:`nrf_desktop_cpu_meas`
 * :ref:`nrf_desktop_dfu`
 * :ref:`nrf_desktop_dfu_mcumgr`
-* :ref:`nrf_desktop_dvfs`
 * :ref:`nrf_desktop_factory_reset`
 * :ref:`nrf_desktop_fast_pair_app`
 * :ref:`nrf_desktop_fn_keys`
