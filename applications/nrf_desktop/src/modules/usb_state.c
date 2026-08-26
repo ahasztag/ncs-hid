@@ -129,6 +129,12 @@ BUILD_ASSERT(!IS_ENABLED(CONFIG_DESKTOP_HID_STATE_ENABLE) ||
 	     IS_ENABLED(CONFIG_DESKTOP_USB_SELECTIVE_REPORT_SUBSCRIPTION) ||
 	     (ARRAY_SIZE(usb_hid_device) <= 1));
 
+#if IS_ENABLED(CONFIG_DESKTOP_USB_STACK_NEXT) && IS_ENABLED(CONFIG_UDC_DWC2)
+BUILD_ASSERT(CONFIG_UDC_DWC2_USBHS_VBUS_READY_TIMEOUT > 0,
+	     "Timeout must be set to prevent the usbd_enable() function from blocking the "
+	     "application forever when the USB cable is not connected.");
+#endif
+
 static struct usbd_context *usbd_ctx;
 static bool usb_enabled;
 
