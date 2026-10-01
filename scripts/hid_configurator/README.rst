@@ -262,7 +262,7 @@ Use the following syntax to display the list of options for the given module tha
     python3 configurator_cli.py DEVICE config MODULE_NAME -h
 
 .. tip::
-  The available configurable modules and options are defined by the :file:`nrf/scripts/hid_configurator/modules/module_config.py` file.
+  The available configurable modules and options are defined by the :file:`scripts/hid_configurator/modules/module_config.py` file.
 
   You can add another configurable module to the file.
   Use the existing modules as examples.
@@ -306,7 +306,7 @@ When the whole image is transmitted, the update process is completed during the 
 If the DFU process is interrupted, it can be resumed using the same image, unless the device restarts.
 After the device reboots, the process always starts from the beginning.
 For more information, see nRF Desktop's :ref:`nrf_desktop_dfu`.
-The DFU functionality on the host computer is implemented in the :file:`nrf/scripts/hid_configurator/modules/dfu.py` file.
+The DFU functionality on the host computer is implemented in the :file:`scripts/hid_configurator/modules/dfu.py` file.
 
 The ``dfu`` command reads the version of the firmware and the bootloader variant that are running on the device and compares them with the firmware version and the bootloader variant in the update image at the provided path.
 If the process is to be continued, the script uploads the image data to the device.
@@ -377,8 +377,8 @@ The LED stream is a feature of nRF Desktop that allows you to send a stream of c
 For more information about its implementation, see nRF Desktop's :ref:`nrf_desktop_led_stream`.
 The LED stream functionality on the host computer is implemented by the following files:
 
-* :file:`nrf/scripts/hid_configurator/modules/led_stream.py`
-* :file:`nrf/scripts/hid_configurator/modules/music_led_stream.py`.
+* :file:`scripts/hid_configurator/modules/led_stream.py`
+* :file:`scripts/hid_configurator/modules/music_led_stream.py`.
 
 HID configurator's ``led_stream`` command starts the LED stream playback on the device.
 

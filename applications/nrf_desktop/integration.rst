@@ -69,8 +69,12 @@ Perform the following steps to add nRF Desktop application configuration for a b
    Motion module
      * The no longer supported ``nrf52840gmouse`` used the PMW3360 optical motion sensor.
        To add a new sensor, expand the application configuration.
+       See `NCS v3.4.1 Adding a new motion sensor`_ and `NCS v3.4.1 PMW3360 driver`_ for details.
+       For configuration examples, see the `NCS v3.4.1 nrf52840gmouse application configuration`_ and `NCS v3.4.1 nrf52840gmouse board devicetree`_ in sdk-nrf.
    Wheel module
-     * On the no longer supported ``nrf52840gmouse`` board, the wheel was based on the QDEC peripheral of the nRF52840 device and the hardware-related part was configured in DTS
+     * On the no longer supported ``nrf52840gmouse`` board, the wheel was based on the QDEC peripheral of the nRF52840 device and the hardware-related part was configured in devicetree.
+       See `NCS v3.4.1 Wheel module`_ for details.
+       For configuration examples, see the `NCS v3.4.1 nrf52840gmouse application configuration`_ and `NCS v3.4.1 nrf52840gmouse board devicetree`_ in sdk-nrf.
    Buttons module
      * To simplify the configuration of arrays, the nRF Desktop application uses :file:`_def` files.
      * The :file:`_def` file of the buttons module contains pins assigned to rows and columns.
@@ -145,24 +149,26 @@ To define the binding, edit the DTS file that describes the board.
 For more information, see :ref:`zephyr:devicetree-intro`.
 
 As an example, take a look at the PMW3360 sensor that is already available in the |NCS|.
+The following code excerpt is taken from the `NCS v3.4.1 nrf52840gmouse board devicetree`_ in sdk-nrf:
 
 .. code-block:: none
 
    &spi1 {
       compatible = "nordic,nrf-spim";
       status = "okay";
-      cs-gpios = <&gpio0 13 0>;
+      cs-gpios = <&gpio0 13 GPIO_ACTIVE_LOW>;
 
-    pinctrl-0 = <&spi1_default_alt>;
-    pinctrl-1 = <&spi1_sleep_alt>;
-    pinctrl-names = "default", "sleep";
-        pmw3360@0 {
-          compatible = "pixart,pmw3360";
-          reg = <0>;
-          irq-gpios = <&gpio0 21 0>;
-          spi-max-frequency = <2000000>;
-        };
-    };
+      pinctrl-0 = <&spi1_default>;
+      pinctrl-1 = <&spi1_sleep>;
+      pinctrl-names = "default", "sleep";
+
+      pmw3360@0 {
+         compatible = "pixart,pmw3360";
+         reg = <0>;
+         irq-gpios = <&gpio0 21 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+         spi-max-frequency = <2000000>;
+      };
+   };
 
 The communication with PMW3360 happens through the SPI, which makes the sensor a subnode of the SPI bus node.
 SPI pins are defined as part of the bus configuration, as these are common among all devices connected to this bus.

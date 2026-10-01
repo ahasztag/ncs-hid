@@ -18,7 +18,7 @@ Among the types of data that you can send through the configuration channel are 
 * Firmware updates.
 * LED effect display data, after it has been generated on the computer.
 
-For instructions on how to install and use the configuration channel tools that are provided in the |NCS| on a host computer, see the :ref:`nrf_desktop_config_channel_script`.
+For instructions on how to install and use the configuration channel tools that are provided in the |addon| on a host computer, see the :ref:`nrf_desktop_config_channel_script`.
 
 Transport overview
 ******************
