@@ -40,7 +40,7 @@ See `Dependencies`_ for more information.
    The new version of the script can also handle archives in legacy format version.
 
    If you cannot update the script on a given host, you can manually align the content of the zip archive generated with format version ``1`` to format version ``0``.
-   Detailed steps are described in :ref:`migration_2.7`.
+   Detailed steps are described in :ref:`nrf:migration_2.7`.
 
 Requirements
 ************

@@ -10,7 +10,7 @@ USB state power manager module
 The |usb_state_pm| is a minor, stateless module that imposes the following power state restrictions related to the USB state:
 
 * Application power level restrictions.
-  The application power level is managed by the :ref:`caf_power_manager`.
+  The application power level is managed by the :ref:`nrf:caf_power_manager`.
 * Zephyr's :ref:`zephyr:pm-system` latency restrictions.
 
 Module events

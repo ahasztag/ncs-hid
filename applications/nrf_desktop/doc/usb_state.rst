@@ -40,7 +40,7 @@ To select the USB stack, enable one of the following Kconfig choice options:
   This is the only USB stack that supports SoCs with USB High-Speed.
 
 .. note::
-   The USB next stack integration is :ref:`experimental <software_maturity>`.
+   The USB next stack integration is :ref:`experimental <nrf:software_maturity>`.
    For example, the HID boot protocol integration is not yet fully tested and might not work properly.
    Because of that, the USB legacy stack is still used by default despite the fact that it is deprecated.
 

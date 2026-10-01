@@ -22,4 +22,4 @@ Module events
 Implementation details
 **********************
 
-For implementation details refer to :ref:`caf_click_detector`.
+For implementation details refer to :ref:`nrf:caf_click_detector`.

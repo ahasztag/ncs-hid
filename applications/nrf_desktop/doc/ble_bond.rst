@@ -16,7 +16,7 @@ The module controls the following operations:
 
 .. note::
    The nRF Desktop uses the application-specific |ble_bond| implementation.
-   The application does not rely on the :ref:`caf_ble_bond` implementation.
+   The application does not rely on the :ref:`nrf:caf_ble_bond` implementation.
 
 Module events
 *************
@@ -61,7 +61,7 @@ Module states
 *************
 
 The |ble_bond| is implemented as a state machine.
-Every transition is triggered by an :ref:`app_event_manager` event with a predefined value.
+Every transition is triggered by an :ref:`nrf:app_event_manager` event with a predefined value.
 Some transitions can be also triggered by internal timeout.
 For example, the transition from :c:enumerator:`STATE_ERASE_PEER` to :c:enumerator:`STATE_IDLE` can be triggered by ``click_event``, ``selector_event``, or an internal timeout.
 
@@ -200,7 +200,7 @@ Peer control using a button
 Complete the following steps to let the user control Bluetooth peers using the dedicated button:
 
 1. Set the :option:`CONFIG_DESKTOP_BLE_PEER_CONTROL` option to enable the feature.
-#. Configure the :ref:`caf_buttons`.
+#. Configure the :ref:`nrf:caf_buttons`.
 #. Define the button's key ID as :option:`CONFIG_DESKTOP_BLE_PEER_CONTROL_BUTTON`.
 #. Add the button to the :ref:`nrf_desktop_click_detector` configuration, because the |ble_bond| reacts on ``click_event``.
 

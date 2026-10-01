@@ -21,8 +21,8 @@ Application overview
 
 The nRF Desktop application design aims at high performance, while still providing configurability and extensibility.
 
-The application architecture is modular, event-driven and build around :ref:`lib_caf`.
-This means that parts of the application functionality are separated into isolated modules that communicate with each other using application events that are handled by the :ref:`app_event_manager`.
+The application architecture is modular, event-driven and build around :ref:`nrf:lib_caf`.
+This means that parts of the application functionality are separated into isolated modules that communicate with each other using application events that are handled by the :ref:`nrf:app_event_manager`.
 Modules register themselves as listeners of events that they are configured to react to.
 An application event can be submitted by multiple modules and it can have multiple listeners.
 
@@ -31,7 +31,7 @@ An application event can be submitted by multiple modules and it can have multip
 Module and component overview
 =============================
 
-The following figure shows the nRF Desktop modules and how they relate to other components and the :ref:`app_event_manager`.
+The following figure shows the nRF Desktop modules and how they relate to other components and the :ref:`nrf:app_event_manager`.
 The figure does not present all the available modules.
 For example, the figure does not include the modules that are used as hotfixes or only for debug or profiling purposes.
 
@@ -85,7 +85,7 @@ Sink module
 
 .. note::
    Some application modules can have multiple implementations (for example, :ref:`nrf_desktop_motion`).
-   In such case, the table shows the :ref:`app_event_manager` events received and submitted by all implementations of a given application module.
+   In such case, the table shows the :ref:`nrf:app_event_manager` events received and submitted by all implementations of a given application module.
 
 Module usage per hardware type
 ==============================
@@ -184,7 +184,7 @@ Most of memory resources that are used by the application are allocated statical
 The application uses dynamic allocation to:
 
 * Create the Application Event Manager events.
-  For more information, see the :ref:`app_event_manager` page.
+  For more information, see the :ref:`nrf:app_event_manager` page.
 * Temporarily store the HID-related data in the :ref:`nrf_desktop_hid_state` and :ref:`nrf_desktop_hid_forward`.
   For more information, see the documentation pages of these modules.
 
@@ -239,7 +239,7 @@ The nRF Desktop mouse sends HID input reports to the host after the host connect
 
 The :ref:`nrf_desktop_motion` sensor sampling is synchronized with sending the HID mouse input reports to the host.
 
-The :ref:`nrf_desktop_wheel` and :ref:`caf_buttons` provide data to the :ref:`nrf_desktop_hid_provider_mouse` when the mouse wheel is used or a button is pressed, respectively.
+The :ref:`nrf_desktop_wheel` and :ref:`nrf:caf_buttons` provide data to the :ref:`nrf_desktop_hid_provider_mouse` when the mouse wheel is used or a button is pressed, respectively.
 These inputs are not synchronized with the HID report transmission to the host.
 
 When the mouse is constantly in use, the motion module is kept in the fetching state.
@@ -372,7 +372,7 @@ Those files can be easily identified by their :ref:`zephyr:application-file-suff
 Before you start testing the application, you can select one of the build types supported by the application.
 Not every board supports all of the mentioned build types.
 
-See :ref:`app_build_file_suffixes` and :ref:`cmake_options` for more information.
+See :ref:`nrf:app_build_file_suffixes` and :ref:`nrf:cmake_options` for more information.
 
 The application supports the following build types:
 
@@ -664,7 +664,7 @@ The nRF Desktop application uses the following files as configuration sources:
   See :ref:`zephyr:dt-guide` for more information about the DTS data structure.
 * :file:`_def` files - These contain configuration arrays for the application modules and are specific to the nRF Desktop application.
 * Kconfig files - These reflect the software configuration.
-  See :ref:`kconfig_tips_and_tricks` for information about how to configure them.
+  See :ref:`zephyr:kconfig_tips_and_tricks` for information about how to configure them.
 
 For information about differences between DTS and Kconfig, see :ref:`zephyr:dt_vs_kconfig`.
 
@@ -707,7 +707,7 @@ To get the memory footprint for a given image, run the following commands from t
 
    west build -d <build_dir>/<image_name> -t ram_report
 
-For more information, see the Zephyr's :ref:`optimization_tools` documentation.
+For more information, see the Zephyr's :ref:`zephyr:optimization_tools` documentation.
 
 .. _nrf_desktop_selecting_build_types:
 
@@ -715,7 +715,7 @@ Selecting a build type
 ======================
 
 Before you start testing the application, you can select one of the :ref:`nrf_desktop_requirements_build_types`, depending on your development kit.
-See :ref:`app_build_file_suffixes` and :ref:`cmake_options` for information about how to select a build type.
+See :ref:`nrf:app_build_file_suffixes` and :ref:`nrf:cmake_options` for information about how to select a build type.
 
 .. note::
    An nRF Desktop device with `Fast Pair`_ support by default uses the debug Fast Pair Model ID and Anti Spoofing private key obtained by Nordic Semiconductor for development purposes.
@@ -741,7 +741,7 @@ See :ref:`app_build_file_suffixes` and :ref:`cmake_options` for information abou
       * Data-Only connection: true
       * No Personalized Name: false
 
-   See :ref:`ug_bt_fast_pair_provisioning` documentation for the following information:
+   See :ref:`nrf:ug_bt_fast_pair_provisioning` documentation for the following information:
 
    * Registering a Fast Pair Provider
    * Provisioning a Fast Pair Provider in |NCS|
@@ -787,7 +787,7 @@ Use the following command to perform the operation:
 Alternatively, you can perform the provisioning operation manually with the ``west ncs-provision upload`` command and then flash the device with the ``west flash`` command.
 
 You only need to provision one public key to an nRF Desktop device.
-For details, see :ref:`ug_kmu_provisioning_overview`.
+For details, see :ref:`nrf:ug_kmu_provisioning_overview`.
 
 .. note::
    You must provision the device again after erasing it.
@@ -971,12 +971,12 @@ Dependencies
 
 This application uses the following |NCS| libraries and drivers:
 
-* :ref:`lib_caf`
-* :ref:`app_event_manager`
-* :ref:`nrf_profiler`
-* :ref:`hids_readme`
-* :ref:`hogp_readme`
-* :ref:`nrf_bt_scan_readme`
-* :ref:`gatt_dm_readme`
+* :ref:`nrf:lib_caf`
+* :ref:`nrf:app_event_manager`
+* :ref:`nrf:nrf_profiler`
+* :ref:`nrf:hids_readme`
+* :ref:`nrf:hogp_readme`
+* :ref:`nrf:nrf_bt_scan_readme`
+* :ref:`nrf:gatt_dm_readme`
 * :file:`drivers/sensor/paw3212`
 * :file:`drivers/sensor/pmw3360`

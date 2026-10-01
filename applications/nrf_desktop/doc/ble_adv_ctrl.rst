@@ -7,7 +7,7 @@ Bluetooth LE advertising control module
    :local:
    :depth: 2
 
-The Bluetooth LE advertising control module is responsible for controlling :ref:`caf_ble_adv`.
+The Bluetooth LE advertising control module is responsible for controlling :ref:`nrf:caf_ble_adv`.
 The module is used to suspend and resume the |ble_adv|.
 For now, the module can only react to the USB state changes.
 It suspends the |ble_adv| when the active USB device is connected (USB state is set to :c:enum:`USB_STATE_ACTIVE`).
@@ -29,7 +29,7 @@ Configuration
 
 This module is disabled by default.
 To enable it, set the :option:`CONFIG_DESKTOP_BLE_ADV_CTRL_ENABLE` Kconfig option to ``y``.
-To enable the module to suspend and resume the :ref:`caf_ble_adv` when USB state changes, set the :option:`CONFIG_DESKTOP_BLE_ADV_CTRL_SUSPEND_ON_USB` Kconfig option to ``y``.
+To enable the module to suspend and resume the :ref:`nrf:caf_ble_adv` when USB state changes, set the :option:`CONFIG_DESKTOP_BLE_ADV_CTRL_SUSPEND_ON_USB` Kconfig option to ``y``.
 It is recommended to enable this option if the device supports the USB High-Speed.
 
 Implementation details

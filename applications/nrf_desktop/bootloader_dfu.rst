@@ -23,7 +23,7 @@ The nRF Desktop application can use one of the following bootloaders:
   In this documentation, the Secure Bootloader is referred as *B0*.
   B0 is a small, simple, and secure bootloader that allows the application to boot directly from one of the application slots, thus increasing the speed of the direct firmware upgrade (DFU) process.
   This bootloader can be used only for the :ref:`background DFU <nrf_desktop_bootloader_background_dfu>` through the :ref:`nrf_desktop_config_channel` and :ref:`nrf_desktop_dfu`.
-  For more information about the B0, see the :ref:`bootloader` page.
+  For more information about the B0, see the :ref:`nrf:bootloader` page.
 
 **MCUboot**
   MCUboot is supported on the SoCs from the following series:
@@ -165,7 +165,7 @@ Enable the USB serial recovery DFU using the following configuration options:
 
   .. note::
     Make sure to enable and properly configure the USB subsystem in the bootloader configuration.
-    See :ref:`usb_api` for more information.
+    See :ref:`zephyr:usb_api` for more information.
 
 If you press the predefined button during the boot, the MCUboot bootloader enters the serial recovery mode instead of booting the application.
 The GPIO pin used to trigger the serial recovery mode is configured using Devicetree Specification (DTS).
@@ -268,7 +268,7 @@ MCUboot bootloader features specific to nRF54L series
 Most nRF54L Series devices support the use of the Key Management Unit (KMU) to store keys for signature verification instead of compiling key data into the MCUboot bootloader image.
 To use KMU in the MCUboot bootloader, enable the :kconfig:option:`SB_CONFIG_MCUBOOT_SIGNATURE_USING_KMU` sysbuild Kconfig option.
 You must also make sure to provision the public key to your target device before running the firmware.
-See the :ref:`ug_kmu_provisioning_overview` documentation for details.
+See the :ref:`nrf:ug_kmu_provisioning_overview` documentation for details.
 
 .. note::
     To use automatic provisioning, enable the :kconfig:option:`SB_CONFIG_MCUBOOT_GENERATE_DEFAULT_KEY_FILE` sysbuild Kconfig option.
@@ -367,7 +367,7 @@ To perform DFU using the `nRF Connect Device Manager`_ mobile app, complete the 
             Otherwise, the DFU target may reject the FOTA process due to a downgrade prevention mechanism.
 
       #. Download the :file:`dfu_application.zip` archive to your device.
-         See :ref:`app_build_output_files` for more information about the contents of update archive.
+         See :ref:`nrf:app_build_output_files` for more information about the contents of update archive.
 
          .. note::
             nRF Connect for Desktop does not currently support the FOTA process.

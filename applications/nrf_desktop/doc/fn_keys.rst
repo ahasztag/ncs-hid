@@ -24,7 +24,7 @@ Module events
 Configuration
 *************
 
-The module uses :c:struct:`button_event` sent by :ref:`caf_buttons`.
+The module uses :c:struct:`button_event` sent by :ref:`nrf:caf_buttons`.
 Make sure mentioned CAF module is enabled.
 
 The module is enabled with :option:`CONFIG_DESKTOP_FN_KEYS_ENABLE` option.

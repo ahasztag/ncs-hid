@@ -10,7 +10,7 @@ nRF Desktop: Bluetooth
 The nRF Desktop devices use :ref:`Zephyr's Bluetooth API <zephyr:bluetooth>` to handle the Bluetooth® LE connections.
 
 This API is used only by the application modules that handle such connections.
-The information about peer and connection state is propagated to other application modules using :ref:`app_event_manager` events.
+The information about peer and connection state is propagated to other application modules using :ref:`nrf:app_event_manager` events.
 
 The :option:`CONFIG_DESKTOP_BT` Kconfig option enables support for Bluetooth connectivity in the nRF Desktop.
 Specific Bluetooth configurations and application modules are selected or implied according to the HID device role.
@@ -163,8 +163,8 @@ The nRF Desktop peripheral can be built with Google `Fast Pair`_ support.
 The configurations that enable Fast Pair are specified in the files with filenames ending with the ``fast_pair`` and ``release_fast_pair`` suffixes.
 
 .. note::
-   Both the Fast Pair integration in the nRF Desktop and the Fast Pair support in the |NCS| for the HID use case are :ref:`experimental <software_maturity_fast_pair>`.
-   See :ref:`ug_bt_fast_pair` for details.
+   Both the Fast Pair integration in the nRF Desktop and the Fast Pair support in the |NCS| for the HID use case are :ref:`experimental <nrf:software_maturity_fast_pair>`.
+   See :ref:`nrf:ug_bt_fast_pair` for details.
 
 These configurations support multiple bonds for each Bluetooth local identity (:kconfig:option:`CONFIG_CAF_BLE_STATE_MAX_LOCAL_ID_BONDS` is set to ``3``) and erase advertising (:option:`CONFIG_DESKTOP_BLE_PEER_ERASE`), but Bluetooth peer selection (:option:`CONFIG_DESKTOP_BLE_PEER_SELECT`) is disabled.
 You can now pair with your other hosts without switching the peripheral back in pairing mode (without triggering the erase advertising).
@@ -193,7 +193,7 @@ Apart from that, the following changes are applied in configurations that suppor
 * The :kconfig:option:`SB_CONFIG_BT_FAST_PAIR_MODEL_ID` and :kconfig:option:`SB_CONFIG_BT_FAST_PAIR_ANTI_SPOOFING_PRIVATE_KEY` Kconfig options are set in the sysbuild configuration to generate the hex file with Fast Pair provisioning data.
   These Kconfig options are configured to represent the Nordic device models that are intended for demonstration purposes.
 * The :kconfig:option:`CONFIG_BT_FAST_PAIR` Kconfig option is enabled in the main (default) image configuration.
-  For more details about enabling Fast Pair for your application, see the :ref:`ug_bt_fast_pair_prerequisite_ops_kconfig` section in the Fast Pair integration guide.
+  For more details about enabling Fast Pair for your application, see the :ref:`nrf:ug_bt_fast_pair_prerequisite_ops_kconfig` section in the Fast Pair integration guide.
 * The :ref:`memory layout <nrf_desktop_memory_layout>` is modified to introduce a dedicated non-volatile memory partition used to store the Fast Pair provisioning data.
 * Bluetooth privacy feature (:kconfig:option:`CONFIG_BT_PRIVACY`) is enabled.
 * The fast and slow advertising intervals defined in the :ref:`nrf_desktop_ble_adv` are aligned with Fast Pair expectations.
@@ -203,7 +203,7 @@ Apart from that, the following changes are applied in configurations that suppor
   Currently, Fast Pair does not support devices that use a screen or keyboard for Bluetooth authentication.
 * TX power correction value (:kconfig:option:`CONFIG_BT_ADV_PROV_TX_POWER_CORRECTION_VAL`) is configured to align the TX power included in the advertising data with the Fast Pair expectations.
 
-See :ref:`ug_bt_fast_pair` for detailed information about Fast Pair support in the |NCS|.
+See :ref:`nrf:ug_bt_fast_pair` for detailed information about Fast Pair support in the |NCS|.
 
 Bluetooth Central
 *****************

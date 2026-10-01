@@ -33,7 +33,7 @@ Complete the following steps to configure the module:
    The HID forward application module is enabled by the :option:`CONFIG_DESKTOP_HID_FORWARD_ENABLE` option which is implied by the :option:`CONFIG_DESKTOP_BT_CENTRAL` option together with other application modules.
    These modules are required for HID dongle that forwards the data from HID peripherals connected over Bluetooth.
 
-   * The :option:`CONFIG_DESKTOP_HID_FORWARD_ENABLE` option selects :kconfig:option:`CONFIG_BT_HOGP` to automatically enable the :ref:`hogp_readme`.
+   * The :option:`CONFIG_DESKTOP_HID_FORWARD_ENABLE` option selects :kconfig:option:`CONFIG_BT_HOGP` to automatically enable the :ref:`nrf:hogp_readme`.
      An nRF Desktop dongle does not generate its own HID input reports.
      The dongle uses |hid_forward| to forward the HID reports.
      The reports are received by the HID service client from the peripherals connected over Bluetooth.
@@ -140,7 +140,7 @@ If changes of state related to the HID output report with the given ID are frequ
 HID SCI
 =======
 
-With the :option:`CONFIG_DESKTOP_HID_FORWARD_HID_SCI_ENABLE` Kconfig option enabled, the module uses the :ref:`hogp_readme` to handle HID SCI on connected peripherals.
+With the :option:`CONFIG_DESKTOP_HID_FORWARD_HID_SCI_ENABLE` Kconfig option enabled, the module uses the :ref:`nrf:hogp_readme` to handle HID SCI on connected peripherals.
 
 After :ref:`nrf_desktop_ble_discovery` successfully discovers a connected peripheral, the module calls the :c:func:`bt_hogp_sci_supported` function to check if the peripheral supports HID SCI.
 If it does, the module enriches the event with :c:member:`ble_discovery_complete_event.peer_sci_support` set to ``true`` for the remaining subscribers.

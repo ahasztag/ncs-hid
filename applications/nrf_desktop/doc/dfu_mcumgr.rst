@@ -66,7 +66,7 @@ The DFU module leverages the :ref:`nrf_desktop_dfu_lock` to synchronize non-vola
 Set the :option:`CONFIG_DESKTOP_DFU_LOCK` Kconfig option to enable this feature.
 Make sure that the DFU lock utility is enabled if your nRF Desktop application configuration uses multiple DFU transports.
 
-You cannot use this module with the :ref:`caf_ble_smp`.
+You cannot use this module with the :ref:`nrf:caf_ble_smp`.
 In other words, you cannot simultaneously enable the :option:`CONFIG_DESKTOP_DFU_MCUMGR_ENABLE` option and the :kconfig:option:`CONFIG_CAF_BLE_SMP` Kconfig option.
 
 .. note::

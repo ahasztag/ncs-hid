@@ -52,7 +52,7 @@ Configuration
 *************
 
 To enable the |led_state|, set the :kconfig:option:`CONFIG_CAF_LEDS` Kconfig option.
-You must also configure the :ref:`caf_leds` that is used as a sink module for ``led_state``.
+You must also configure the :ref:`nrf:caf_leds` that is used as a sink module for ``led_state``.
 
 For every board that has this option enabled, you must define the module configuration.
 The configuration must be defined in the file named :option:`CONFIG_DESKTOP_LED_STATE_DEF_PATH` located in the board-specific directory in the application configuration directory.
@@ -60,8 +60,8 @@ By default, the file is named as :file:`led_state_def.h`.
 
 The configuration consists of the following elements:
 
-* ``led_map`` - Maps the :c:enum:`led_id` values to IDs used by the :ref:`caf_leds`.
-  If no physical LED is assigned to a :c:enum:`led_id` value, assign :c:macro:`LED_UNAVAILABLE` as the ID used by the :ref:`caf_leds`.
+* ``led_map`` - Maps the :c:enum:`led_id` values to IDs used by the :ref:`nrf:caf_leds`.
+  If no physical LED is assigned to a :c:enum:`led_id` value, assign :c:macro:`LED_UNAVAILABLE` as the ID used by the :ref:`nrf:caf_leds`.
 * ``led_system_state_effect`` - Defines the LED effects used to show the system states.
   The effect must be defined for every system state.
 * ``led_peer_state_effect`` - Defines the LED effects used to show the Bluetooth peer states.

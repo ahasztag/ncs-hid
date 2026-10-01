@@ -24,7 +24,7 @@ Module events
 Configuration
 *************
 
-nRF Desktop uses the power manager module from the :ref:`lib_caf` (CAF).
+nRF Desktop uses the power manager module from the :ref:`nrf:lib_caf` (CAF).
 The :option:`CONFIG_DESKTOP_POWER_MANAGER` Kconfig option selects :kconfig:option:`CONFIG_CAF_POWER_MANAGER` and aligns the default module configuration to the application requirements.
 The :option:`CONFIG_DESKTOP_POWER_MANAGER` Kconfig option is implied by the :option:`CONFIG_DESKTOP_COMMON_MODULES` Kconfig option.
 The :option:`CONFIG_DESKTOP_COMMON_MODULES` option is enabled by default and is not user-assignable.
@@ -34,4 +34,4 @@ Additionally, the :kconfig:option:`CONFIG_CAF_POWER_MANAGER_STAY_ON` option is a
 Implementation details
 **********************
 
-See the :ref:`CAF power manager module <caf_power_manager>` page for implementation details.
+See the :ref:`CAF power manager module <nrf:caf_power_manager>` page for implementation details.

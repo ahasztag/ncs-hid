@@ -23,7 +23,7 @@ Module events
 Configuration
 *************
 
-nRF Desktop uses the settings loader module from the :ref:`lib_caf` (CAF).
+nRF Desktop uses the settings loader module from the :ref:`nrf:lib_caf` (CAF).
 The :option:`CONFIG_DESKTOP_SETTINGS_LOADER` Kconfig option selects :kconfig:option:`CONFIG_CAF_SETTINGS_LOADER` and aligns the module configuration to the application requirements.
 The :option:`CONFIG_DESKTOP_SETTINGS_LOADER` Kconfig option is implied by the :option:`CONFIG_DESKTOP_COMMON_MODULES` Kconfig option.
 The :option:`CONFIG_DESKTOP_COMMON_MODULES` option is enabled by default and is not user-assignable.
@@ -44,10 +44,10 @@ Settings load in a separate thread
 ==================================
 
 Enabling the :kconfig:option:`CONFIG_CAF_SETTINGS_LOADER_USE_THREAD` option is recommended for keyboard reference designs.
-The :ref:`caf_buttons` uses the system workqueue to scan the keyboard matrix.
+The :ref:`nrf:caf_buttons` uses the system workqueue to scan the keyboard matrix.
 Loading the settings in the system workqueue context could block the workqueue and result in missing key presses on system reboot.
 
 Implementation details
 **********************
 
-See the :ref:`CAF Settings loader module <caf_settings_loader>` page for implementation details.
+See the :ref:`CAF Settings loader module <nrf:caf_settings_loader>` page for implementation details.

@@ -32,7 +32,7 @@ Complete the following steps to configure the module:
 #. Make sure that the :kconfig:option:`CONFIG_BT_GATT_CLIENT` Kconfig option is enabled to support the GATT Client role.
    The GATT Client role is enabled by default by the :option:`CONFIG_DESKTOP_BT_CENTRAL` Kconfig option.
 
-   The |ble_discovery| module uses the :ref:`gatt_dm_readme` and selects the :kconfig:option:`CONFIG_BT_GATT_DM` Kconfig option to enable the library.
+   The |ble_discovery| module uses the :ref:`nrf:gatt_dm_readme` and selects the :kconfig:option:`CONFIG_BT_GATT_DM` Kconfig option to enable the library.
 
 #. Define the module configuration in the :file:`ble_discovery_def.h` file, located in the board-specific directory in the application configuration directory.
    You must define the following parameters for every nRF Desktop peripheral that connects with the given nRF Desktop central:

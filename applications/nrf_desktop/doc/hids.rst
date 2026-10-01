@@ -34,16 +34,16 @@ GATT Service configuration
 
 The :option:`CONFIG_DESKTOP_HIDS_ENABLE` option selects the following Kconfig options:
 
-* The :kconfig:option:`CONFIG_BT_HIDS` option that automatically enables the :ref:`hids_readme`.
-* The :kconfig:option:`CONFIG_BT_CONN_CTX` option that automatically enables the :ref:`bt_conn_ctx_readme`, which is required by the |GATT_HID|.
+* The :kconfig:option:`CONFIG_BT_HIDS` option that automatically enables the :ref:`nrf:hids_readme`.
+* The :kconfig:option:`CONFIG_BT_CONN_CTX` option that automatically enables the :ref:`nrf:bt_conn_ctx_readme`, which is required by the |GATT_HID|.
 
-The nRF Desktop application modifies the default Kconfig option values, defined by the :ref:`hids_readme`, to tailor the default configuration to application needs.
+The nRF Desktop application modifies the default Kconfig option values, defined by the :ref:`nrf:hids_readme`, to tailor the default configuration to application needs.
 The configuration is tailored for either nRF Desktop mouse (:option:`CONFIG_DESKTOP_PERIPHERAL_TYPE_MOUSE`) or nRF Desktop keyboard (:option:`CONFIG_DESKTOP_PERIPHERAL_TYPE_KEYBOARD`).
 For more details, see the :file:`src/modules/Kconfig.hids` file.
 
 .. tip::
    If the HID report configuration is identical to the default configuration of either nRF Desktop mouse or keyboard, you do not need to modify the |GATT_HID| configuration.
-   Otherwise, see :ref:`hids_readme` documentation for configuration details.
+   Otherwise, see :ref:`nrf:hids_readme` documentation for configuration details.
 
 HID SCI support
 ---------------

@@ -50,12 +50,12 @@ Sample mouse or keyboard (``nrf54l15dk/nrf54l05/cpuapp``)
         Only the ``hid_sci``, ``release_hid_sci``, ``hid_sci_keyboard``, and ``release_hid_sci_keyboard`` configurations use HID SCI (Shorter Connection Intervals) and disable LLPM.
       * The preconfigured ``debug`` configurations do not use the bootloader due to memory size limits.
         In the ``debug`` configurations, logs are provided through the UART.
-        For detailed information on working with the nRF54L15 DK, see the :ref:`ug_nrf54l15_gs` documentation.
+        For detailed information on working with the nRF54L15 DK, see the :ref:`nrf:ug_nrf54l` documentation.
       * The preconfigured ``release`` configurations use the MCUboot bootloader built in the direct-xip mode (``MCUBOOT+XIP``) and support firmware updates using the :ref:`nrf_desktop_dfu`.
         All of the ``release`` configurations enable hardware cryptography for the MCUboot bootloader.
         The application image is verified using a pure ED25519 signature.
         The public key that MCUboot uses for validating the application image is securely stored in the hardware Key Management Unit (KMU).
-        For more details about KMU, see :ref:`ug_kmu_guides`.
+        For more details about KMU, see :ref:`nrf:ug_kmu_guides`.
       * The board supports the ``release`` :ref:`nrf_desktop_bluetooth_guide_fast_pair` configuration that acts as a mouse  (``release_fast_pair`` file suffix).
 
 Sample mouse or keyboard (``nrf54l15dk/nrf54l10/cpuapp``)
@@ -71,12 +71,12 @@ Sample mouse or keyboard (``nrf54l15dk/nrf54l10/cpuapp``)
         Most of the configurations use the Low Latency Packet Mode (LLPM).
         Only the ``hid_sci``, ``release_hid_sci``, ``hid_sci_keyboard``, and ``release_hid_sci_keyboard`` configurations use HID SCI (Shorter Connection Intervals) and disable LLPM.
       * In ``debug`` configurations, logs are provided through the UART.
-        For detailed information on working with the nRF54L15 DK, see the :ref:`ug_nrf54l15_gs` documentation.
+        For detailed information on working with the nRF54L15 DK, see the :ref:`nrf:ug_nrf54l` documentation.
       * The configurations use the MCUboot bootloader built in the direct-xip mode (``MCUBOOT+XIP``) and support firmware updates using the :ref:`nrf_desktop_dfu`.
         All of the configurations enable hardware cryptography for the MCUboot bootloader.
         The application image is verified using a pure ED25519 signature.
         The public key that MCUboot uses for validating the application image is securely stored in the hardware Key Management Unit (KMU).
-        For more details about KMU, see :ref:`ug_kmu_guides`.
+        For more details about KMU, see :ref:`nrf:ug_kmu_guides`.
       * The board supports the ``debug`` :ref:`nrf_desktop_bluetooth_guide_fast_pair` configuration that acts as a mouse (``fast_pair`` file suffix).
         The configuration uses the MCUboot bootloader built in the direct-xip mode (``MCUBOOT+XIP``), and supports firmware updates using the :ref:`nrf_desktop_dfu` and :ref:`nrf_desktop_dfu_mcumgr`.
 
@@ -93,12 +93,12 @@ Sample mouse or keyboard (``nrf54l15dk/nrf54l15/cpuapp``)
         Most of the configurations use the Low Latency Packet Mode (LLPM).
         Only the ``hid_sci``, ``release_hid_sci``, ``hid_sci_keyboard``, and ``release_hid_sci_keyboard`` configurations use HID SCI (Shorter Connection Intervals) and disable LLPM.
       * In ``debug`` configurations, logs are provided through the UART.
-        For detailed information on working with the nRF54L15 DK, see the :ref:`ug_nrf54l15_gs` documentation.
+        For detailed information on working with the nRF54L15 DK, see the :ref:`nrf:ug_nrf54l` documentation.
       * The configurations use the MCUboot bootloader built in the direct-xip mode (``MCUBOOT+XIP``) and support firmware updates using the :ref:`nrf_desktop_dfu`.
         All of the configurations enable hardware cryptography for the MCUboot bootloader.
         The application image is verified using a pure ED25519 signature.
         The public key that MCUboot uses for validating the application image is securely stored in the hardware Key Management Unit (KMU).
-        For more details about KMU, see :ref:`ug_kmu_guides`.
+        For more details about KMU, see :ref:`nrf:ug_kmu_guides`.
       * The board supports the ``debug`` :ref:`nrf_desktop_bluetooth_guide_fast_pair` configuration that acts as a mouse (``fast_pair`` file suffix).
         The configuration uses the MCUboot bootloader built in the direct-xip mode (``MCUBOOT+XIP``), and supports firmware updates using the :ref:`nrf_desktop_dfu` and :ref:`nrf_desktop_dfu_mcumgr`.
 
@@ -122,13 +122,13 @@ Sample mouse, LLPM dongle, or HID SCI dongle (``nrf54lm20dk/nrf54lm20a/cpuapp``,
         Input data comes from Bluetooth and is retransmitted to USB.
         HID Shorter Connection Intervals (SCI) are used to negotiate the connection parameters with the nRF Desktop peripheral.
       * In the debug versions of the configurations, logs are provided through the UART.
-        For detailed information on working with the nRF54LM20 DK, see the :ref:`ug_nrf54l15_gs` documentation.
+        For detailed information on working with the nRF54LM20 DK, see the :ref:`nrf:ug_nrf54l` documentation.
       * In ``llvm`` configurations, the partition layout is different to accommodate for the higher memory footprint of the ``llvm``  toolchain.
       * Generally, with the exception of the ``ram_load`` and ``release_ram_load`` configurations, the configurations use the MCUboot bootloader built in the direct-xip mode (``MCUBOOT+XIP``) and support firmware updates using the :ref:`nrf_desktop_dfu`.
         These configurations enable hardware cryptography using KMU for the MCUboot bootloader.
         The application image is verified using a pure ED25519 signature.
         The public key that MCUboot uses for validating the application image is securely stored in the hardware Key Management Unit (KMU).
-        For more details about KMU, see :ref:`ug_kmu_guides`.
+        For more details about KMU, see :ref:`nrf:ug_kmu_guides`.
       * The ``ram_load`` and ``release_ram_load`` configurations use the MCUboot bootloader built in the RAM load mode (``MCUBOOT``) and support firmware updates using the :ref:`nrf_desktop_dfu`.
         Configurations in this bootloader mode use the same security features as direct-xip mode (``MCUBOOT+XIP``), including hardware cryptography, signature type, and public key storage.
         The application code is executed from the RAM in this mode to improve the HID report rate over USB.
@@ -158,8 +158,8 @@ Sample mouse (``nrf54lc10dk/nrf54lc10a/cpuapp``)
         Bluetooth LE is configured to use Nordic Semiconductor's SoftDevice Link Layer and Low Latency Packet Mode (LLPM).
       * In ``debug`` configurations, logs are provided through the UART.
       * The configurations use the MCUboot bootloader built in the direct-xip mode (``MCUBOOT+XIP``) and support firmware updates using the :ref:`nrf_desktop_dfu`.
-        For detailed information on working with the nRF54LC10 DK, see the :ref:`ug_nrf54l15_gs` documentation.
+        For detailed information on working with the nRF54LC10 DK, see the :ref:`nrf:ug_nrf54l` documentation.
         All of the configurations enable hardware cryptography for the MCUboot bootloader.
         The application image is verified using a pure ED25519 signature.
         The public key that MCUboot uses for validating the application image is securely stored in the hardware Key Management Unit (KMU).
-        For more details about KMU, see :ref:`ug_kmu_guides`.
+        For more details about KMU, see :ref:`nrf:ug_kmu_guides`.
