@@ -376,6 +376,8 @@ See :ref:`nrf:app_build_file_suffixes` and :ref:`nrf:cmake_options` for more inf
 
 The application supports the following build types:
 
+All build types except the HID SCI ones support Low Latency Packet Mode (LLPM).
+
 .. list-table:: nRF Desktop build types
    :widths: auto
    :header-rows: 1
@@ -403,7 +405,7 @@ The application supports the following build types:
    * - Dongle
      - ``dongle``
      - ``nrf54lm20dk/nrf54lm20b/cpuapp``
-     - Debug version of the application that lets you generate the application with the dongle role.
+     - Debug version of the application that acts as a Bluetooth LE LLPM dongle bridging radio connected HID peripherals.
    * - Release dongle
      - ``release_dongle``
      - ``nrf54lm20dk/nrf54lm20b/cpuapp``
@@ -695,7 +697,7 @@ Memory footprint usage
 You can display a detailed memory footprint report for either the main application image or for other sysbuild images that are built together with the main application image (for example, ``mcuboot`` or the ``b0`` bootloader).
 
 Memory footprint information is displayed separately per every sysbuild image.
-To get the memory footprint for a given image, run the following commands from the application directory (:file:`nrf/applications/nrf_desktop`):
+To get the memory footprint for a given image, run the following commands from the application directory (:file:`applications/nrf_desktop`):
 
 .. parsed-literal::
    :class: highlight
@@ -925,14 +927,14 @@ USB High-Speed
 ~~~~~~~~~~~~~~
 
 You can use the nRF54LM20 DK to evaluate USBHS.
-Use the ``release`` configuration and slightly modify the simulated motion module's configuration to ensure that non-zero motion values are reported in every HID report.
+Use the ``release_ram_load`` configuration and slightly modify the simulated motion module's configuration to ensure that non-zero motion values are reported in every HID report.
 See an example of the build command:
 
    .. parsed-literal::
       :class: highlight
 
       west build -p -b nrf54lm20dk/nrf54lm20a/cpuapp -- \
-      -DFILE_SUFFIX=release \
+      -DFILE_SUFFIX=release_ram_load \
       -DCONFIG_DESKTOP_MOTION_SIMULATED_ENABLE=y \
       -DCONFIG_DESKTOP_MOTION_SIMULATED_EDGE_TIME=8192 \
       -DCONFIG_DESKTOP_MOTION_SIMULATED_SCALE_FACTOR=5
@@ -978,5 +980,5 @@ This application uses the following |NCS| libraries and drivers:
 * :ref:`nrf:hogp_readme`
 * :ref:`nrf:nrf_bt_scan_readme`
 * :ref:`nrf:gatt_dm_readme`
-* :file:`drivers/sensor/paw3212`
-* :file:`drivers/sensor/pmw3360`
+* :ref:`nrf:paw3212`
+* :ref:`nrf:pmw3360`

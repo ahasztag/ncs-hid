@@ -24,6 +24,9 @@
 .. _`fwupd`: https://github.com/fwupd/fwupd
 .. _`nordic-hid.quirk`: https://github.com/fwupd/fwupd/tree/main/plugins/nordic-hid/nordic-hid.quirk
 
+.. _`NCS v3.4.1 nrf52840gmouse application configuration`: https://github.com/nrfconnect/sdk-nrf/tree/v3.4.1/applications/nrf_desktop/configuration/nrf52840gmouse_nrf52840
+.. _`NCS v3.4.1 nrf52840gmouse board devicetree`: https://github.com/nrfconnect/sdk-nrf/blob/v3.4.1/boards/nordic/nrf52840gmouse/nrf52840gmouse_nrf52840.dts
+
 .. ### Source: bluetooth.com
 
 .. _`HID Service Specification`: https://www.bluetooth.com/specifications/specs/hid-service-specification/
@@ -44,6 +47,10 @@
 .. _`nRF Connect Device Manager`: https://www.nordicsemi.com/Products/Development-tools/nrf-connect-device-manager
 .. _`CAF LED effect API`: https://nrfconnectdocs.nordicsemi.com/ncs/|ncs_version_number|/nrf/doxygen/html/group__led__effect__CAF.html
 .. _`known issues page on the main branch`: https://nrfconnectdocs.nordicsemi.com/addons/addon-hid/latest/known_issues.html
+
+.. _`NCS v3.4.1 Adding a new motion sensor`: https://nrfconnectdocs.nordicsemi.com/ncs/3.4.1/nrf/applications/nrf_desktop/integration.html#adding-a-new-motion-sensor
+.. _`NCS v3.4.1 PMW3360 driver`: https://nrfconnectdocs.nordicsemi.com/ncs/3.4.1/nrf/drivers/pmw3360.html
+.. _`NCS v3.4.1 Wheel module`: https://nrfconnectdocs.nordicsemi.com/ncs/3.4.1/nrf/applications/nrf_desktop/doc/wheel.html
 
 .. ### Source: *.microsoft.com
 

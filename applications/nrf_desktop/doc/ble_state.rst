@@ -39,7 +39,7 @@ The :option:`CONFIG_DESKTOP_BLE_STATE` Kconfig option selects the :kconfig:optio
 
 For more information about the |ble_state| implementation, see the :ref:`CAF Bluetooth LE state <nrf:caf_ble_state>` page.
 
-When Shorter Connection Intervals (SCI) are enabled, the |addon| also enables the :kconfig:option:`CONFIG_CAF_BLE_STATE_EXTENSION` and :kconfig:option:`CONFIG_CAF_BLE_SCI_CONN_RATE_EVENTS` options to provide the :c:struct:`ble_peer_sci_conn_rate_event` until it is available in the used |NCS| release.
+When Shorter Connection Intervals (SCI) are enabled, the |addon| also enables the :option:`CONFIG_CAF_BLE_STATE_EXTENSION` and :option:`CONFIG_CAF_BLE_SCI_CONN_RATE_EVENTS` options to provide the :c:struct:`ble_peer_sci_conn_rate_event` until it is available in the used |NCS| release.
 
 .. note::
    Connection parameter changes behave very differently when HID SCI is used.

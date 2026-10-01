@@ -12,10 +12,10 @@ The Bluetooth® LE state extension module extends the :ref:`CAF Bluetooth LE sta
 Configuration
 *************
 
-The module is enabled by the :kconfig:option:`CONFIG_CAF_BLE_STATE_EXTENSION` Kconfig option.
+The module is enabled by the :option:`CONFIG_CAF_BLE_STATE_EXTENSION` Kconfig option.
 The option depends on :kconfig:option:`CONFIG_CAF_BLE_STATE` and is enabled by default if prerequisites are met.
 
-When Shorter Connection Intervals (SCI) is used, the :kconfig:option:`CONFIG_CAF_BLE_SCI_CONN_RATE_EVENTS` option is also required.
+When Shorter Connection Intervals (SCI) is used, the :option:`CONFIG_CAF_BLE_SCI_CONN_RATE_EVENTS` option is also required.
 The option is enabled by default if prerequisites are met.
 
 See the :ref:`caf_extensions_kconfig` page for the complete list of CAF extension Kconfig options.
