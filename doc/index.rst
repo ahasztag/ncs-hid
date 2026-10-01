@@ -18,6 +18,8 @@ The add-on combines device-side firmware, based on the nRF Desktop reference des
 This page describes the parts of the solution and how they work together.
 For the requirements that you need to meet before you start, see the :ref:`setup` page.
 
+The software in the |addon| has Supported maturity level unless explicitly stated otherwise for a given software component.
+
 Solution components
 *******************
 

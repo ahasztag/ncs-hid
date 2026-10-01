@@ -16,7 +16,8 @@ Highlights
 **********
 
 * First standalone |NCS| add-on (``ncs-hid``) for HID development on top of the |NCS| v3.4.1.
-* nRF Desktop application ported from sdk-nrf with a narrowed scope to support only nRF54L Series development kits.
+* nRF Desktop application ported from the ``sdk-nrf`` repository with a narrowed scope to support only nRF54L Series development kits.
+  The application has Supported maturity level unless explicitly stated otherwise for a given software component.
 * Experimental end-to-end HID Shorter Connection Intervals (HID SCI) support in nRF Desktop for both peripheral and dongle roles.
 
 Release tag
