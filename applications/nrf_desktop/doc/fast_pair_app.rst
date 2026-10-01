@@ -32,7 +32,7 @@ Configuration
 
 The Fast Pair module requires enabling the following Kconfig options:
 
-* :kconfig:option:`CONFIG_BT_ADV_PROV_FAST_PAIR` - The nRF Desktop's :ref:`nrf_desktop_ble_adv` uses :ref:`bt_le_adv_prov_readme` to generate advertising and scan response data.
+* :kconfig:option:`CONFIG_BT_ADV_PROV_FAST_PAIR` - The nRF Desktop's :ref:`nrf_desktop_ble_adv` uses :ref:`nrf:bt_le_adv_prov_readme` to generate advertising and scan response data.
   The Google Fast Pair advertising data provider (:kconfig:option:`CONFIG_BT_ADV_PROV_FAST_PAIR`) is used to add the Fast Pair payload to the advertising data.
   The Fast Pair module uses API of the Google Fast Pair advertising data provider to switch between showing and hiding the UI indication.
   The UI indication is displayed only if the Provider can bond with new peers on the currently used Bluetooth local identity.
@@ -64,5 +64,5 @@ This allows the module to update the Fast Pair advertising payload just before t
 The module is a subscriber for :c:struct:`ble_dongle_peer_event`.
 This allows the module to remove the Fast Pair advertising payload when the application identity of the dongle peer is used.
 
-The module registers the global application's Bluetooth authentication callbacks (:c:struct:`bt_conn_auth_cb`) and enables the :ref:`bt_fast_pair_readme` (:c:func:`bt_fast_pair_enable`) after :ref:`caf_settings_loader` loads Zephyr's :ref:`zephyr:settings_api`.
+The module registers the global application's Bluetooth authentication callbacks (:c:struct:`bt_conn_auth_cb`) and enables the :ref:`nrf:bt_fast_pair_readme` (:c:func:`bt_fast_pair_enable`) after :ref:`nrf:caf_settings_loader` loads Zephyr's :ref:`zephyr:settings_api`.
 The callbacks are used to reject normal Bluetooth pairing when outside of the pairing mode.

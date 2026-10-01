@@ -76,7 +76,7 @@ HID keyboard LEDs
 =================
 
 You must define which hardware LEDs are used to display state of the HID keyboard LEDs report and LED effects that should be used to display the state.
-See documentation of :ref:`caf_leds` for details about LED effects.
+See documentation of :ref:`nrf:caf_leds` for details about LED effects.
 
 You must create a configuration file with the following data:
 

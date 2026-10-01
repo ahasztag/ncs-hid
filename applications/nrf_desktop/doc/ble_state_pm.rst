@@ -24,5 +24,5 @@ Module events
 Implementation details
 **********************
 
-nRF Desktop uses the |ble_state_pm| from :ref:`lib_caf` (CAF).
-See the :ref:`CAF Bluetooth state power manager module <caf_ble_state_pm>` page for implementation details.
+nRF Desktop uses the |ble_state_pm| from :ref:`nrf:lib_caf` (CAF).
+See the :ref:`CAF Bluetooth state power manager module <nrf:caf_ble_state_pm>` page for implementation details.

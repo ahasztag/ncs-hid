@@ -57,8 +57,8 @@ Perform the following steps to add nRF Desktop application configuration for a b
 #. In Kconfig, ensure that the hardware interface modules required by your device are enabled.
    For a gaming mouse, this typically includes:
 
-   * :ref:`caf_buttons`
-   * :ref:`caf_leds`
+   * :ref:`nrf:caf_buttons`
+   * :ref:`nrf:caf_leds`
    * :ref:`nrf_desktop_motion`
    * :ref:`nrf_desktop_wheel`
    * :ref:`nrf_desktop_battery_meas`
@@ -81,7 +81,7 @@ Perform the following steps to add nRF Desktop application configuration for a b
      * The module uses Zephyr's :ref:`zephyr:led_api` driver for setting the LED color.
        Zephyr's LED driver can use the implementation based on either GPIO or PWM (Pulse-Width Modulation).
        The hardware configuration is described through DTS.
-       See the :ref:`caf_leds` configuration section for details.
+       See the :ref:`nrf:caf_leds` configuration section for details.
 
 #. Review the :ref:`nrf_desktop_hid_configuration`.
 #. By default, the nRF Desktop device enables Bluetooth connectivity support.
@@ -133,7 +133,7 @@ Create a DTS binding
 
 Zephyr recommends to use DTS for hardware configuration (see :ref:`zephyr:dt_vs_kconfig`).
 For the new motion sensor configuration to be recognized by DTS, define a dedicated DTS binding.
-See :ref:`dt-bindings` for more information, and refer to :file:`dts/bindings/sensor` for binding examples.
+See :ref:`zephyr:dt-bindings` for more information, and refer to :file:`dts/bindings/sensor` for binding examples.
 
 .. rst-class:: numbered-step
 
@@ -142,7 +142,7 @@ Configure sensor through DTS
 
 Once binding is defined, you can set the sensor configuration.
 To define the binding, edit the DTS file that describes the board.
-For more information, see :ref:`devicetree-intro`.
+For more information, see :ref:`zephyr:devicetree-intro`.
 
 As an example, take a look at the PMW3360 sensor that is already available in the |NCS|.
 

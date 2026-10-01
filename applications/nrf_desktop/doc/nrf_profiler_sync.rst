@@ -7,12 +7,12 @@ nRF Profiler synchronization module
    :local:
    :depth: 2
 
-Use the nRF Profiler synchronization module to synchronize the timestamps of :ref:`nrf_profiler` events between two devices connected over a physical wire.
+Use the nRF Profiler synchronization module to synchronize the timestamps of :ref:`nrf:nrf_profiler` events between two devices connected over a physical wire.
 The timestamp synchronization is required to increase the accuracy of the amount of time measured between the nRF Profiler events originating from two different devices.
 
 The nRF Profiler data is collected separately from both devices using dedicated Python scripts.
 The data can then be merged using the :file:`merge_data.py` script with :c:struct:`sync_event` used as a synchronization event for both Peripheral and Central.
-For more details, see the :ref:`nrf_profiler` documentation.
+For more details, see the :ref:`nrf:nrf_profiler` documentation.
 
 Module events
 *************
@@ -31,7 +31,7 @@ A predefined signal on the GPIO is used to simultaneously generate synchronizati
 For this reason, you must enable the :kconfig:option:`CONFIG_GPIO` Kconfig option.
 
 You must also enable the :kconfig:option:`CONFIG_APP_EVENT_MANAGER_PROFILER_TRACER` Kconfig option.
-The nRF Profiler synchronization module generates an :ref:`nrf_profiler` event (:c:struct:`sync_event`) that is not an :ref:`app_event_manager` event.
+The nRF Profiler synchronization module generates an :ref:`nrf:nrf_profiler` event (:c:struct:`sync_event`) that is not an :ref:`nrf:app_event_manager` event.
 For this reason, the :c:struct:`sync_event` execution is not traced.
 
 You must also define the following options:

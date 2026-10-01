@@ -14,7 +14,7 @@ You can use these options to select a device role and to automatically apply a d
    Part of the default configuration is applied by modifying the default values of Kconfig options.
    Changing configuration in menuconfig does not automatically adjust user-configurable values to the new defaults.
    So, you must update those values manually.
-   For more information, see the Stuck symbols in menuconfig and guiconfig section on the :ref:`kconfig_tips_and_tricks` in the Zephyr documentation.
+   For more information, see the Stuck symbols in menuconfig and guiconfig section on the :ref:`zephyr:kconfig_tips_and_tricks` in the Zephyr documentation.
 
    The default Kconfig option values are automatically updated if configuration changes are applied directly in the configuration files.
 
@@ -107,7 +107,7 @@ Default common configuration
 ****************************
 
 The nRF Desktop application aligns the configuration with the nRF Desktop use case by overlaying Kconfig defaults and selecting or implying the required Kconfig options.
-Among others, the Kconfig :ref:`app_event_manager` and :ref:`lib_caf` options are selected to ensure that they are enabled.
+Among others, the Kconfig :ref:`nrf:app_event_manager` and :ref:`nrf:lib_caf` options are selected to ensure that they are enabled.
 The :option:`CONFIG_DESKTOP_SETTINGS_LOADER` and :option:`CONFIG_DESKTOP_POWER_MANAGER` are implied to enable the :ref:`nrf_desktop_settings_loader` and :ref:`nrf_desktop_power_manager` modules, respectively.
 See the :file:`Kconfig.defaults` file for details related to the default common configuration.
 
@@ -137,6 +137,6 @@ See the :ref:`nrf_desktop_bluetooth_guide` for more information about Bluetooth 
 CAF configuration
 ******************
 
-The nRF Desktop application overlays the defaults of the :ref:`lib_caf` related Kconfig options to align them with the nRF Desktop use case.
+The nRF Desktop application overlays the defaults of the :ref:`nrf:lib_caf` related Kconfig options to align them with the nRF Desktop use case.
 The files that apply the overlays are located in the :file:`src/modules` directory and are named :file:`Kconfig.caf_module_name.default`.
-For example, the Kconfig defaults of :ref:`caf_settings_loader` are overlayed in the :file:`src/modules/Kconfig.caf_settings_loader.default`.
+For example, the Kconfig defaults of :ref:`nrf:caf_settings_loader` are overlayed in the :file:`src/modules/Kconfig.caf_settings_loader.default`.

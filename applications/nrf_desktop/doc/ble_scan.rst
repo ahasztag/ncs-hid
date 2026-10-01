@@ -7,7 +7,7 @@ Bluetooth LE scanning module
    :local:
    :depth: 2
 
-The nRF Desktop's Bluetooth® LE scanning module is based on the |NCS|'s :ref:`nrf_bt_scan_readme`.
+The nRF Desktop's Bluetooth® LE scanning module is based on the |NCS|'s :ref:`nrf:nrf_bt_scan_readme`.
 
 Use the |ble_scan| for the following purposes:
 
@@ -52,7 +52,7 @@ Complete the following steps to enable the |ble_scan|:
    * :kconfig:option:`CONFIG_BT_SCAN_CONN_ATTEMPTS_FILTER_LEN` - This option defines the maximum number of filtered devices.
    * :kconfig:option:`CONFIG_BT_SCAN_CONN_ATTEMPTS_COUNT` - This option defines the connection attempt count for a given peripheral.
 
-   The :ref:`nrf_bt_scan_readme` counts all disconnections for a peripheral.
+   The :ref:`nrf:nrf_bt_scan_readme` counts all disconnections for a peripheral.
    The |ble_scan| uses :c:func:`bt_scan_conn_attempts_filter_clear` to clear all the connection attempt counters on the following occasions:
 
    * After a successful peripheral discovery takes place (on ``ble_discovery_complete_event``).
@@ -88,7 +88,7 @@ The following scanning scenarios are possible:
 Scanning module configuration
 =============================
 
-The |ble_scan| relies on the :ref:`nrf_bt_scan_readme` library to perform Bluetooth scanning.
+The |ble_scan| relies on the :ref:`nrf:nrf_bt_scan_readme` library to perform Bluetooth scanning.
 The module selects :kconfig:option:`CONFIG_BT_SCAN` and :kconfig:option:`CONFIG_BT_SCAN_FILTER_ENABLE`.
 Apart from that, the following default values are applied:
 
@@ -162,7 +162,7 @@ Bluetooth connection interval
 
 After the scan filter match, the following happens:
 
-1. The scanning is stopped and the |NCS|'s :ref:`nrf_bt_scan_readme` automatically establishes the Bluetooth connection with the peripheral.
+1. The scanning is stopped and the |NCS|'s :ref:`nrf:nrf_bt_scan_readme` automatically establishes the Bluetooth connection with the peripheral.
    The initial Bluetooth connection interval is set by default to 7.5 ms, that is to the shortest connection interval allowed by the Bluetooth specification.
 #. The peer discovery is started.
 #. After the :ref:`nrf_desktop_ble_discovery` completes the peer discovery, the :ref:`nrf_desktop_ble_conn_params` receives the ``ble_discovery_complete_event`` and updates the Bluetooth connection interval.
