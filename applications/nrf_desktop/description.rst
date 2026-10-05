@@ -654,21 +654,31 @@ The assignments of hardware interface elements depend on the device type.
 
 ..
 
-System state indication
-=======================
+.. _nrf_desktop_led_indication:
 
-When available, one of the LEDs is used to indicate the state of the device.
-This system state LED is kept lit when the device is active.
+LED indication
+==============
+
+When available, the onboard LEDs provide user feedback about the device and Bluetooth peer state.
 
 .. tabs::
 
    .. tab:: nRF54 DK
 
-      **LED0** is used for the system state indication.
+      The nRF54 Series DK uses two onboard LEDs for user feedback:
+
+      **LED0** — system state
+         Kept lit while the device is active.
+         After a system error, the LED will blink rapidly for some time before the device is reset.
+
+      **LED1** — Bluetooth peer state
+         Shows the Bluetooth connection and peer management state.
+         A breathing or blinking LED effect, depending on the DK, indicates ongoing peer search (either Bluetooth scanning or advertising).
+         The LED is kept lit while the device maintains a Bluetooth connection.
+         The LED blinks rapidly while the device is waiting for user confirmation of a Bluetooth LE peer operation.
+         See :ref:`nrf_desktop_ble_peers` for details about peer operations that change the LED effect.
 
 ..
-
-In case of a system error, the system state LED will start to blink rapidly for some time before the device is reset.
 
 .. _nrf_desktop_debugging:
 
