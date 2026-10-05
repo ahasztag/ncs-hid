@@ -465,6 +465,60 @@ User interface
 The nRF Desktop configuration files have a set of preprogrammed options bound to different parts of the hardware.
 These options are related to the functionalities discussed in this section.
 
+.. _nrf_desktop_hid_user_input_generation:
+
+HID user input generation
+=========================
+
+On the nRF54 Series DK reference configurations, the onboard buttons are used to generate HID user input when the device acts as a mouse or keyboard peripheral.
+Some buttons also support :ref:`Bluetooth LE peer control <nrf_desktop_ble_peers>` operations.
+
+.. tabs::
+
+   .. tab:: Mouse peripheral
+
+      In the default mouse configurations, all four onboard buttons are used to simulate mouse movement.
+
+      The buttons are assigned as follows:
+
+      Button 0
+         Generates upward mouse movement.
+         **Button 0** is also assigned to :ref:`Bluetooth LE peer control <nrf_desktop_ble_peers>` operations.
+
+      Button 1
+         Generates rightward mouse movement.
+
+      Button 2
+         Generates leftward mouse movement.
+
+      Button 3
+         Generates downward mouse movement.
+
+      Pressing and holding a button generates continuous movement in the corresponding direction.
+      See the :ref:`nrf_desktop_motion` documentation page for details.
+
+   .. tab:: Keyboard peripheral
+
+      In the default keyboard configurations, the onboard buttons simulate a limited set of keyboard keys.
+
+      The buttons are assigned as follows:
+
+      Button 0
+         Acts as an **A** keyboard key.
+         **Button 0** is also assigned to :ref:`Bluetooth LE peer control <nrf_desktop_ble_peers>` operations.
+
+      Button 1
+         Acts as a **B** keyboard key.
+
+      Button 2
+         Acts as the left **Shift** keyboard key.
+
+      Button 3
+         Starts or stops the :ref:`button simulator module <nrf_desktop_buttons_sim>`.
+         When started, the module automatically generates a predefined sequence of key presses that types ``nordic`` (including the trailing space character) on the connected HID host until the module is stopped.
+
+..
+
 Turning devices on and off
 ==========================
 
