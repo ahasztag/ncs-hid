@@ -85,8 +85,6 @@ tests:
     platform_allow:
       - nrf54lm20dk/nrf54lm20a/cpuapp
       - nrf54lm20dk/nrf54lm20b/cpuapp
-    extra_configs:
-      - CONFIG_CLOCK_CONTROL_NRF=n
     integration_platforms:
       - nrf54lm20dk/nrf54lm20b/cpuapp
     harness: console
@@ -150,8 +148,6 @@ tests:
       - nrf54ls05dk/nrf54ls05a/cpuapp
     extra_args: FILE_SUFFIX=release_hid_sci_keyboard
   applications.hid.nrf_desktop.zdebug_keyboard.uart:
-    extra_configs:
-      - CONFIG_CLOCK_CONTROL_NRF=n
     platform_allow:
       - nrf54l15dk/nrf54l10/cpuapp
       - nrf54l15dk/nrf54l15/cpuapp
@@ -206,8 +202,6 @@ tests:
       - FILE_SUFFIX=release_fast_pair
   applications.hid.nrf_desktop.zrelease_dongle_4llpmconn:
     build_only: true
-    extra_configs:
-      - CONFIG_CLOCK_CONTROL_NRF=n
     platform_allow:
       - nrf54lm20dk/nrf54lm20a/cpuapp
       - nrf54lm20dk/nrf54lm20b/cpuapp
