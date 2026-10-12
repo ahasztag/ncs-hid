@@ -41,7 +41,7 @@ The nRF Desktop application can use one of the following bootloaders:
     The MCUboot can also be used for the background DFU over the Simple Management Protocol (SMP).
     The SMP can be used to transfer the new firmware image in the background, for example, from an Android device.
     In that case, either the :ref:`nrf_desktop_ble_smp` or :ref:`nrf_desktop_dfu_mcumgr` is used to handle the image transfer.
-    The :ref:`nrf_desktop_ble_smp` relies on a generic module implemented in the Common Application Framework (CAF).
+    The :ref:`nrf_desktop_ble_smp` uses the application-specific SMP over Bluetooth LE module (:option:`CONFIG_DESKTOP_BLE_SMP_ENABLE`), which is based on the :ref:`CAF SMP over Bluetooth LE module <nrf:caf_ble_smp>`.
     The :ref:`nrf_desktop_dfu_mcumgr` uses an application-specific implementation that allows to synchronize a secondary image slot access with the :ref:`nrf_desktop_dfu` using the :ref:`nrf_desktop_dfu_lock`.
 
   * :ref:`USB serial recovery <nrf_desktop_bootloader_serial_dfu>`.

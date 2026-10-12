@@ -1,0 +1,26 @@
+#
+# Copyright (c) 2026 Nordic Semiconductor ASA
+#
+# SPDX-License-Identifier: LicenseRef-Nordic-5-Clause
+#
+
+menuconfig DESKTOP_BLE_SMP_ENABLE
+	bool "SMP over Bluetooth LE module"
+	select CAF_BLE_SMP_TRANSFER_EVENTS
+	depends on !CAF_BLE_SMP
+	depends on CAF_BLE_STATE
+	depends on MCUMGR_MGMT_NOTIFICATION_HOOKS
+	depends on MCUMGR_GRP_IMG_UPLOAD_CHECK_HOOK
+	depends on MCUMGR_GRP_IMG
+	depends on MCUMGR_TRANSPORT_BT
+	depends on BOOTLOADER_MCUBOOT
+	help
+	  This option enables SMP service allowing DFU over Bluetooth LE.
+
+if DESKTOP_BLE_SMP_ENABLE
+
+module = DESKTOP_BLE_SMP
+module-str = ble smp
+source "subsys/logging/Kconfig.template.log_config"
+
+endif # DESKTOP_BLE_SMP_ENABLE

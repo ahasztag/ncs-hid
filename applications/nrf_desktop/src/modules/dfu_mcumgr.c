@@ -29,8 +29,8 @@ static struct k_work_delayable dfu_timeout;
 
 static atomic_t mcumgr_event_active = ATOMIC_INIT(false);
 
-/* nRF Desktop MCUmgr DFU module cannot be enabled together with the CAF BLE SMP module. */
-BUILD_ASSERT(!IS_ENABLED(CONFIG_CAF_BLE_SMP));
+/* nRF Desktop MCUmgr DFU module cannot be enabled together with BLE SMP (CAF or nRF Desktop). */
+BUILD_ASSERT(!IS_ENABLED(CONFIG_CAF_BLE_SMP) && !IS_ENABLED(CONFIG_DESKTOP_BLE_SMP_ENABLE));
 
 static void dfu_lock_owner_changed(const struct dfu_lock_owner *new_owner)
 {

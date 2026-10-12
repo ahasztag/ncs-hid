@@ -24,5 +24,6 @@ Module events
 Implementation details
 **********************
 
-nRF Desktop uses the |smp| from the :ref:`nrf:lib_caf` (CAF).
+When enabled, nRF Desktop uses the application-specific SMP over Bluetooth LE module (:option:`CONFIG_DESKTOP_BLE_SMP_ENABLE`).
+Currently the behavior of the module matches exactly the behavior of the :ref:`CAF SMP over Bluetooth LE module <nrf:caf_ble_smp>`.
 See the :ref:`CAF module <nrf:caf_ble_smp>` page for the implementation details and guide on how to perform the firmware update in the `nRF Connect Device Manager`_ application.
