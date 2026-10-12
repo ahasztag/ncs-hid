@@ -1,0 +1,47 @@
+#
+# Copyright (c) 2026 Nordic Semiconductor ASA
+#
+# SPDX-License-Identifier: LicenseRef-Nordic-5-Clause
+#
+
+# Default advertising data providers (BT_ADV_PROV_*) when DESKTOP_BLE_ADV is enabled.
+
+if DESKTOP_BLE_ADV
+
+config BT_ADV_PROV_FLAGS
+	default y
+
+config BT_ADV_PROV_GAP_APPEARANCE
+	default y
+
+config BT_ADV_PROV_DEVICE_NAME
+	default y
+
+config BT_ADV_PROV_DEVICE_NAME_PAIRING_MODE_ONLY
+	default n
+	help
+	  nRF Desktop provides device name also outside of pairing mode. This is
+	  done for backwards compatibility.
+
+config BT_ADV_PROV_SWIFT_PAIR
+	default y
+
+config BT_ADV_PROV_FAST_PAIR
+	default y if BT_FAST_PAIR
+
+config BT_ADV_PROV_FAST_PAIR_SHOW_UI_PAIRING
+	depends on BT_ADV_PROV_FAST_PAIR
+	default n
+	help
+	  nRF Desktop peripheral supports one bond per local identity. Disable
+	  the UI indication during Fast Pair not discoverable advertising to
+	  prevent bonding failures.
+
+config BT_ADV_PROV_TX_POWER
+	default y
+
+config DESKTOP_ADV_PROV_UUID16_ALL
+	depends on (DESKTOP_HIDS_ENABLE || DESKTOP_BAS_ENABLE)
+	default y
+
+endif # DESKTOP_BLE_ADV

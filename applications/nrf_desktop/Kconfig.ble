@@ -46,8 +46,8 @@ config DESKTOP_BT_PERIPHERAL
 	  Device. This specification defines how to implement the HID Device
 	  using Bluetooth connectivity.
 
-	  The nRF Desktop peripheral enables CAF Bluetooth LE advertising
-	  module, Bluetooth LE latency module and GATT Services required for a
+	  The nRF Desktop peripheral enables the application Bluetooth LE
+	  advertising module, Bluetooth LE latency module and GATT Services required for a
 	  HID Device (HID Service, Battery Service and Device Information
 	  Service).
 

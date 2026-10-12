@@ -197,7 +197,7 @@ Apart from that, the following changes are applied in configurations that suppor
 * The :ref:`memory layout <nrf_desktop_memory_layout>` is modified to introduce a dedicated non-volatile memory partition used to store the Fast Pair provisioning data.
 * Bluetooth privacy feature (:kconfig:option:`CONFIG_BT_PRIVACY`) is enabled.
 * The fast and slow advertising intervals defined in the :ref:`nrf_desktop_ble_adv` are aligned with Fast Pair expectations.
-* The Bluetooth advertising filter accept list (:kconfig:option:`CONFIG_CAF_BLE_ADV_FILTER_ACCEPT_LIST`) is disabled to allow Fast Pair Seekers other than the bonded one to connect outside of the pairing mode.
+* The Bluetooth advertising filter accept list (:option:`CONFIG_DESKTOP_BLE_ADV_FILTER_ACCEPT_LIST`) is disabled to allow Fast Pair Seekers other than the bonded one to connect outside of the pairing mode.
 * The security failure timeout (:option:`CONFIG_DESKTOP_BLE_SECURITY_FAIL_TIMEOUT_S`) is longer to prevent disconnections during the Fast Pair procedure.
 * Passkey authentication is not used in the available nRF Desktop configurations.
   Currently, Fast Pair does not support devices that use a screen or keyboard for Bluetooth authentication.

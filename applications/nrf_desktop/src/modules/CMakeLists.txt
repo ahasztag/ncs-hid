@@ -6,6 +6,8 @@
 
 target_sources_ifdef(CONFIG_DESKTOP_BLE_ADV_CTRL_ENABLE app PRIVATE ble_adv_ctrl.c)
 
+target_sources_ifdef(CONFIG_DESKTOP_BLE_ADV app PRIVATE ble_adv.c)
+
 target_sources_ifdef(CONFIG_DESKTOP_BLE_BOND_ENABLE app PRIVATE ble_bond.c)
 
 target_sources_ifdef(CONFIG_DESKTOP_BLE_ENABLE_PASSKEY app PRIVATE ble_passkey.c)

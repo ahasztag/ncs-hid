@@ -7,7 +7,7 @@
 menu "Application modules"
 
 rsource "Kconfig.caf_ble_state.default"
-rsource "Kconfig.caf_ble_adv.default"
+rsource "Kconfig.ble_adv"
 rsource "Kconfig.caf_power_manager.default"
 rsource "Kconfig.caf_settings_loader.default"
 
