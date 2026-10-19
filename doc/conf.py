@@ -7,6 +7,7 @@
 # -- Path setup --------------------------------------------------------------
 
 import os
+import re
 import sys
 from pathlib import Path
 
@@ -48,11 +49,24 @@ release = get_version_string(HID_BASE / 'VERSION')
 
 
 # -- Version information from west manifest ---------------------------------
+#
+# NCS documentation and toolchain references expect a published release or -rc
+# tag. When west.yml pins sdk-nrf to a branch or SHA, fall back so |ncs_version|
+# markers and intersphinx URLs stay valid.
 
-NCS_VERSION              = get_manifest_revision(manifest, "nrf")
-NCS_VERSION_NUMBER       = strip_v(NCS_VERSION)
-TOOLCHAIN_NCS_ID         = NCS_VERSION
-ADDON_RELEASE            = release
+_NCS_DOCS_FALLBACK_VERSION = "v3.4.1"
+
+_ncs_manifest_revision = get_manifest_revision(manifest, "nrf")
+
+if re.fullmatch(r"v\d+\.\d+\.\d+(-rc\d+)?", _ncs_manifest_revision):
+    NCS_VERSION = _ncs_manifest_revision
+else:
+    NCS_VERSION = _NCS_DOCS_FALLBACK_VERSION
+
+NCS_VERSION_NUMBER = strip_v(NCS_VERSION)
+
+TOOLCHAIN_NCS_ID = NCS_VERSION
+ADDON_RELEASE = release
 
 # Zephyr version — read from zephyr/VERSION (same format as hid/VERSION).
 ZEPHYR_VERSION_NUMBER    = get_version_string(ZEPHYR_BASE / "VERSION")
