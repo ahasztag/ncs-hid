@@ -786,7 +786,17 @@ static bool app_event_handler(const struct app_event_header *aeh)
 	if (IS_ENABLED(CONFIG_CAF_BUTTONS_PM_EVENTS) &&
 		is_power_off_event(aeh)) {
 		(void)atomic_set(&system_power_off, true);
-		if (atomic_get(&state) != STATE_OFF) {
+
+		/* Check if an attempt to wake up the system has already been made.
+		 * If the system is about to go into power off, the only
+		 * way to wake it up is by issuing a warm reboot.
+		 *
+		 * Checking the button_wake_up_event pointer is needed to avoid a race
+		 * condition where the button_isr preempts this function before
+		 * system_power_off is set.
+		 */
+		if (atomic_get(&state) != STATE_OFF ||
+		    atomic_ptr_get(&button_wake_up_event) == NULL) {
 			/* Instantly reboot the system to prevent system power off with GPIO */
 			/* interrupts disabled. */
 			sys_reboot(SYS_REBOOT_WARM);
