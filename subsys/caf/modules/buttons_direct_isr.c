@@ -679,6 +679,7 @@ static void resume(void)
 
 	switch (atomic_get(&state)) {
 	case STATE_OFF:
+		deactivate_listeners();
 		preallocate_button_press_events();
 		update_state(STATE_ACTIVE);
 		err = activate_listeners();
