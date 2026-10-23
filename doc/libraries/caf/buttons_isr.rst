@@ -87,7 +87,7 @@ Power management configuration
 
 If the :option:`CONFIG_CAF_BUTTONS_PM_EVENTS` Kconfig option is enabled, the module interacts with power management events (:c:struct:`power_down_event`, :c:struct:`power_off_event`, and :c:struct:`wake_up_event`).
 
-You can use the module to trigger an application wakeup event.
+You can use the module to trigger application wakeup.
 By default, pressing any button wakes up the application.
 In the configuration file, you can specify which buttons should not trigger an application wakeup.
 Mark such buttons in the ``row`` array by setting :c:member:`gpio_pin.wakeup_blocked` to ``true``.
