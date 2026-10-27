@@ -34,6 +34,10 @@ Applications
 nRF Desktop
 -----------
 
+* Added an experimental application-specific :ref:`nrf_desktop_ble_state` implementation.
+  The module ports the :ref:`CAF Bluetooth LE state <nrf:caf_ble_state>` implementation into nRF Desktop so that BLE state handling can be maintained as part of the application and extended with application-specific features in the future.
+  nRF Desktop still uses the CAF module by default.
+  Enable the :option:`CONFIG_DESKTOP_BLE_STATE_APP_SPECIFIC` Kconfig option to build with the application-specific implementation instead.
 * Added the :option:`CONFIG_DESKTOP_CPU_LOAD_EVENT` Kconfig option.
   This option enables the :c:struct:`cpu_load_event`.
 * Updated the :ref:`nrf_desktop_cpu_meas` to allow emitting the measured CPU load directly through the :ref:`nrf:nrf_profiler` API (:option:`CONFIG_DESKTOP_CPU_MEAS_RESULT_NRF_PROFILER`), which minimizes the impact on the measured CPU load.

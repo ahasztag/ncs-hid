@@ -6,6 +6,16 @@
 
 target_sources_ifdef(CONFIG_DESKTOP_BLE_ADV_CTRL_ENABLE app PRIVATE ble_adv_ctrl.c)
 
+target_sources_ifdef(CONFIG_DESKTOP_BLE_STATE_APP_SPECIFIC app PRIVATE ble_state.c)
+
+# Reuse ble_state_pm.c from the NCS CAF subsystem when the application-specific
+# Bluetooth LE state module is enabled.
+if(CONFIG_DESKTOP_BLE_STATE_APP_SPECIFIC)
+  target_sources_ifdef(CONFIG_DESKTOP_BLE_STATE_PM app PRIVATE
+    ${ZEPHYR_NRF_MODULE_DIR}/subsys/caf/modules/ble_state_pm.c
+  )
+endif()
+
 target_sources_ifdef(CONFIG_DESKTOP_BLE_BOND_ENABLE app PRIVATE ble_bond.c)
 
 target_sources_ifdef(CONFIG_DESKTOP_BLE_ENABLE_PASSKEY app PRIVATE ble_passkey.c)

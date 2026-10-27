@@ -25,4 +25,5 @@ Implementation details
 **********************
 
 nRF Desktop uses the |ble_state_pm| from :ref:`nrf:lib_caf` (CAF).
+For configurations that use the application-specific version of the Bluetooth LE state module (:option:`CONFIG_DESKTOP_BLE_STATE_APP_SPECIFIC`), the :option:`CONFIG_DESKTOP_BLE_STATE_PM` Kconfig option enables the |ble_state_pm|.
 See the :ref:`CAF Bluetooth state power manager module <nrf:caf_ble_state_pm>` page for implementation details.
